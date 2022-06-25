@@ -39,6 +39,6 @@ services:
 volumes:
   data: {}
 
-networks:
-  default:
-    name: mongodb_network
+#networks:
+#  default:
+#    name: mongodb_network
