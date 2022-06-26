@@ -16,6 +16,7 @@ public class ApiException extends RuntimeException {
 
     /**
      * Создает исключение с кодом NotFound.
+     *
      * @param id
      */
     public ApiException(String id) {

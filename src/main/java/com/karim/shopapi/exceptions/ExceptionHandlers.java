@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 class ExceptionHandlers {
     /**
      * Обрабатывет исключение ApiException и возвращает ответ с соответствующим кодом.
+     *
      * @param ex Пойманное исключение.
      * @return Ответ.
      */
@@ -28,6 +29,7 @@ class ExceptionHandlers {
 
     /**
      * Обрабатывет исключение MethodArgumentNotValidException и возвращает ответ с кодом 400.
+     *
      * @param ex Пойманное исключение.
      * @return Ответ.
      */
@@ -40,6 +42,7 @@ class ExceptionHandlers {
 
     /**
      * Обрабатывет исключение HttpMessageNotReadableException и возвращает ответ с кодом 400.
+     *
      * @param ex Пойманное исключение.
      * @return Ответ.
      */
@@ -52,6 +55,7 @@ class ExceptionHandlers {
 
     /**
      * Обрабатывет исключение MissingServletRequestParameterException и возвращает ответ с кодом 400.
+     *
      * @param ex Пойманное исключение.
      * @return Ответ.
      */

@@ -1,6 +1,5 @@
 package com.karim.shopapi.controllers;
 
-import com.karim.shopapi.models.Error;
 import com.karim.shopapi.models.Sales;
 import com.karim.shopapi.models.ShopUnit;
 import com.karim.shopapi.models.ShopUnitImportRequest;
@@ -8,7 +7,6 @@ import com.karim.shopapi.services.ShopUnitService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;
-import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -37,49 +35,49 @@ public class ShopUnitController {
             tags = "Get")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Информация об элементе",
-            content = {@Content(mediaType = "application/json",
-            examples = {
-                    @ExampleObject(name = "Example",
-                    value = """
-                            {
-                            "id": "d515e43f-f3f6-4471-bb77-6b455017a2d2",
-                            "name": "Смартфоны",
-                            "date": "2022-02-02T02:00:00.000Z",
-                            "type": "CATEGORY",
-                            "parentId": null,
-                            "price": 800,
-                            "children": [
-                                    {
-                                    "id": "d515e43f-f3f6-4471-bb77-6b455017a2d3",
-                                    "name": "Apple",
-                                    "date": "2022-02-02T02:00:00.000Z",
-                                    "type": "CATEGORY",
-                                    "parentId": "d515e43f-f3f6-4471-bb77-6b455017a2d2",
-                                    "price": 800,
-                                    "children": [
-                                    {
-                                    "id": "d515e43f-f3f6-4471-bb77-6b455017a2d5",
-                                    "name": "IPhone 13",
-                                    "date": "2022-02-02T02:00:00.000Z",
-                                    "type": "OFFER",
-                                    "parentId": "d515e43f-f3f6-4471-bb77-6b455017a2d3",
-                                    "price": 800,
-                                    "children": null
-                                    }]
-                                    }
-                                ]
-                            }
-                            """)
-            })}),
+                    content = {@Content(mediaType = "application/json",
+                            examples = {
+                                    @ExampleObject(name = "Example",
+                                            value = """
+                                                    {
+                                                    "id": "d515e43f-f3f6-4471-bb77-6b455017a2d2",
+                                                    "name": "Смартфоны",
+                                                    "date": "2022-02-02T02:00:00.000Z",
+                                                    "type": "CATEGORY",
+                                                    "parentId": null,
+                                                    "price": 800,
+                                                    "children": [
+                                                            {
+                                                            "id": "d515e43f-f3f6-4471-bb77-6b455017a2d3",
+                                                            "name": "Apple",
+                                                            "date": "2022-02-02T02:00:00.000Z",
+                                                            "type": "CATEGORY",
+                                                            "parentId": "d515e43f-f3f6-4471-bb77-6b455017a2d2",
+                                                            "price": 800,
+                                                            "children": [
+                                                            {
+                                                            "id": "d515e43f-f3f6-4471-bb77-6b455017a2d5",
+                                                            "name": "IPhone 13",
+                                                            "date": "2022-02-02T02:00:00.000Z",
+                                                            "type": "OFFER",
+                                                            "parentId": "d515e43f-f3f6-4471-bb77-6b455017a2d3",
+                                                            "price": 800,
+                                                            "children": null
+                                                            }]
+                                                            }
+                                                        ]
+                                                    }
+                                                    """)
+                            })}),
             @ApiResponse(responseCode = "400", description = "Невалидная схема документа или входные данные не верны.",
                     content = {@Content(mediaType = "application/json",
                             examples = {@ExampleObject(name = "response",
-                            value = """
-                                    {
-                                       "code": 400,
-                                       "message": "Validation Failed"
-                                     }
-                                    """)
+                                    value = """
+                                            {
+                                               "code": 400,
+                                               "message": "Validation Failed"
+                                             }
+                                            """)
                             })}),
             @ApiResponse(responseCode = "404", description = "Категория/товар не найден.",
                     content = {@Content(mediaType = "application/json",
@@ -135,11 +133,11 @@ public class ShopUnitController {
                     content = {@Content(mediaType = "application/json",
                             examples = {@ExampleObject(name = "response",
                                     value = """
-                                    {
-                                       "code": 400,
-                                       "message": "Validation Failed"
-                                     }
-                                    """)
+                                            {
+                                               "code": 400,
+                                               "message": "Validation Failed"
+                                             }
+                                            """)
                             })})
     })
     public Sales getSales(@RequestParam String date) {
@@ -160,11 +158,11 @@ public class ShopUnitController {
                     content = {@Content(mediaType = "application/json",
                             examples = {@ExampleObject(name = "response",
                                     value = """
-                                    {
-                                       "code": 400,
-                                       "message": "Validation Failed"
-                                     }
-                                    """)
+                                            {
+                                               "code": 400,
+                                               "message": "Validation Failed"
+                                             }
+                                            """)
                             })})
     })
     @PostMapping("/imports")
@@ -183,7 +181,7 @@ public class ShopUnitController {
                       "updateDate": "2022-05-28T21:12:01.000Z"
                     }
                     """)})) @org.springframework.web.bind.annotation.RequestBody
-                                           ShopUnitImportRequest shopUnitImportRequest) {
+                                       ShopUnitImportRequest shopUnitImportRequest) {
         shopUnitService.importShopUnit(shopUnitImportRequest);
     }
 
@@ -201,11 +199,11 @@ public class ShopUnitController {
                     content = {@Content(mediaType = "application/json",
                             examples = {@ExampleObject(name = "response",
                                     value = """
-                                    {
-                                       "code": 400,
-                                       "message": "Validation Failed"
-                                     }
-                                    """)
+                                            {
+                                               "code": 400,
+                                               "message": "Validation Failed"
+                                             }
+                                            """)
                             })}),
             @ApiResponse(responseCode = "404", description = "Категория/товар не найден.",
                     content = {@Content(mediaType = "application/json",

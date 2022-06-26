@@ -9,7 +9,7 @@ services:
       - "27017:27017"
     volumes:
       - data:/data
-    #    restart: always
+    restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -33,12 +33,9 @@ services:
       api
     ports:
       - "80:80"
+    restart: always
     depends_on:
       - mongodb
 
 volumes:
   data: {}
-
-#networks:
-#  default:
-#    name: mongodb_network
